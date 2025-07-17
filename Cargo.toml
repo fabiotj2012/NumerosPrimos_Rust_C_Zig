@@ -1,0 +1,20 @@
+[package]
+name = "primes_rust"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "primes_rust"
+path = "primes_rust.rs"
+
+[[bin]]
+name = "primes_rust_sieve"
+path = "primes_rust_sieve.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+overflow-checks = false
+debug-assertions = false

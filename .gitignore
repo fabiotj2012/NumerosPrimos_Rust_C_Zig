@@ -1,0 +1,51 @@
+# Executáveis
+*.exe
+*.pdb
+*.d
+
+# Diretórios de build do Rust
+/target/
+Cargo.lock
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Arquivos de backup do editor
+*.bak
+*.swp
+*.swo
+*~
+
+# Arquivos de log
+*.log
+
+# Diretórios de cache
+.cache/
+
+# Arquivos específicos do VS Code (opcional)
+.vscode/
+*.code-workspace
+
+# Arquivos de debug do C
+*.o
+*.obj
+*.gch
+*.pch
+*.dSYM/
+
+# Arquivos de profiling
+*.prof
+*.gcda
+*.gcno
+
+# Arquivos de output específicos
+primes_c
+primes_c_sieve
+primes_c_optimized
+primes_c_sieve_optimized
+
+# Diretórios do rust-analyzer
+rust-analyzer/
