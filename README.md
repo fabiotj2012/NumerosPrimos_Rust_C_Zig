@@ -1,4 +1,4 @@
-# Comparação de Performance: Rust vs C vs Zig - PORTUGUES PT-BR (In the end there is an English version)
+# Comparação de Performance: Rust vs C vs Zig - (In the end there is an English version)
 ## Contagem de Números Primos de 1 a 5.000.000
 
 Este projeto contém implementações otimizadas para contar números primos em Rust, C e Zig, com duas abordagens diferentes:
