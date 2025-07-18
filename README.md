@@ -1,7 +1,7 @@
-# Comparação de Performance: Rust vs C - PORTUGUES PT-BR (In the end have a English version)
+# Comparação de Performance: Rust vs C vs Zig - PORTUGUES PT-BR (In the end have a English version)
 ## Contagem de Números Primos de 1 a 5.000.000
 
-Este projeto contém implementações otimizadas para contar números primos em Rust e C, com duas abordagens diferentes:
+Este projeto contém implementações otimizadas para contar números primos em Rust, C e Zig, com duas abordagens diferentes:
 
 ### Arquivos do Projeto
 
@@ -12,6 +12,7 @@ Este projeto contém implementações otimizadas para contar números primos em 
 2. **Crivo de Eratóstenes (Mais Eficiente)**:
    - `primes_rust_sieve.rs` - Implementação em Rust
    - `primes_c_sieve.c` - Implementação em C
+   - `primes_zig_sieve.zig` - Implementação em Zig 🆕
 
 3. **Scripts de Compilação e Execução**:
    - `Makefile` - Para compilação manual do C
@@ -35,6 +36,11 @@ gcc -O3 -march=native -flto -ffast-math -funroll-loops -o primes_c_sieve primes_
 .\primes_c_sieve.exe
 ```
 
+**Para Zig:** 🆕
+```bash
+zig run primes_zig_sieve.zig -O ReleaseFast
+```
+
 ### Otimizações Implementadas
 
 **Rust:**
@@ -49,6 +55,14 @@ gcc -O3 -march=native -flto -ffast-math -funroll-loops -o primes_c_sieve primes_
 - Link Time Optimization (-flto)
 - Fast math (-ffast-math)
 - Loop unrolling (-funroll-loops)
+
+**Zig:** 🆕
+- Otimização ReleaseFast (equivalente a -O3)
+- Buffer I/O otimizado (`bufferedWriter`)
+- Bit shifts para operações matemáticas rápidas
+- Allocator otimizado (`page_allocator`)
+- Formatação manual de inteiros
+- Crivo apenas para números ímpares
 
 ### Algoritmos
 
@@ -136,12 +150,18 @@ Tempo gasto: 1.685 segundos
 Quantidade de números primos encontrados: 348513
 Tempo gasto: 1.430 segundos
 
+### Zig: Crivo de Eratóstenes 🆕
+Quantidade de números primos encontrados: 348513
+Tempo gasto: **0.887 segundos** 🏆
+
+**🎉 Zig obteve a melhor performance!**
+
 ---
 
-# Performance Comparison: Rust vs C (English)
+# Performance Comparison: Rust vs C vs Zig (English)
 ## Prime Number Counting from 1 to 5,000,000
 
-This project contains optimized implementations for counting prime numbers in Rust and C, using two different approaches:
+This project contains optimized implementations for counting prime numbers in Rust, C and Zig, using two different approaches:
 
 ### Project Files
 
