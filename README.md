@@ -1,4 +1,4 @@
-# Comparação de Performance: Rust vs C vs Zig - PORTUGUES PT-BR (In the end have a English version)
+# Comparação de Performance: Rust vs C vs Zig - PORTUGUES PT-BR (In the end there is an English version)
 ## Contagem de Números Primos de 1 a 5.000.000
 
 Este projeto contém implementações otimizadas para contar números primos em Rust, C e Zig, com duas abordagens diferentes:
@@ -8,7 +8,7 @@ Este projeto contém implementações otimizadas para contar números primos em 
 1. **Método Tradicional (Teste de Primalidade)**:
    - `primes_rust.rs` - Implementação em Rust
    - `primes_c.c` - Implementação em C
-
+   
 2. **Crivo de Eratóstenes (Mais Eficiente)**:
    - `primes_rust_sieve.rs` - Implementação em Rust
    - `primes_c_sieve.c` - Implementação em C
@@ -150,6 +150,12 @@ Tempo gasto: 1.685 segundos
 Quantidade de números primos encontrados: 348513
 Tempo gasto: 1.430 segundos
 
+
+### Zig: Primeiras execuções sem otimizações 🆕
+Quantidade de números primos encontrados: 348513
+Tempo gasto: **9.774 segundos** 🏆
+
+
 ### Zig: Crivo de Eratóstenes 🆕
 Quantidade de números primos encontrados: 348513
 Tempo gasto: **0.887 segundos** 🏆
@@ -281,6 +287,10 @@ zig run primes_zig_sieve.zig -O ReleaseFast
 **C:**
 - Traditional: 1.685 seconds (6.6x faster!)
 - Sieve of Eratosthenes: 1.430 seconds (7.5x faster!)
+
+### Zig: First runs without optimizations 🆕
+Number of prime numbers found: 348513
+Time spent: **9.774 seconds** 
 
 **Zig:** 🆕
 - Sieve of Eratosthenes: **0.887 seconds** (17.4x faster!) 🏆
