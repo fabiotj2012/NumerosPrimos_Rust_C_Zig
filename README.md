@@ -172,6 +172,7 @@ This project contains optimized implementations for counting prime numbers in Ru
 2. **Sieve of Eratosthenes (More Efficient)**:
    - `primes_rust_sieve.rs` - Rust implementation
    - `primes_c_sieve.c` - C implementation
+   - `primes_zig_sieve.zig` - Zig implementation 🆕
 
 3. **Compilation and Execution Scripts**:
    - `Makefile` - For manual C compilation
@@ -194,6 +195,11 @@ gcc -O3 -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-fu
 gcc -O3 -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-functions -fomit-frame-pointer -DNDEBUG -o primes_c_sieve_optimized primes_c_sieve.c -lm
 .\primes_c_optimized.exe
 .\primes_c_sieve_optimized.exe
+```
+
+**For Zig:** 🆕
+```bash
+zig run primes_zig_sieve.zig -O ReleaseFast
 ```
 
 ### Algorithms
@@ -233,6 +239,15 @@ gcc -O3 -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-fu
 - Optimized step in sieve (skips even numbers)
 - Process only odd numbers in output
 
+#### Zig - Sieve of Eratosthenes (Ultra-Optimized): 🆕
+- Buffered I/O with `bufferedWriter` (equivalent to Rust's BufWriter)
+- Bit shifts for fast mathematical operations (`>>` and `<<`)
+- Optimized `page_allocator` for large allocations
+- Manual integer formatting for faster output
+- Sieve only for odd numbers (50% memory savings)
+- Pre-calculated sqrt to avoid repeated computation
+- Step optimization in inner loops
+
 ### Aggressive Compilation Flags:
 **Rust:**
 - `RUSTFLAGS=-C target-cpu=native -C target-feature=+crt-static`
@@ -241,6 +256,11 @@ gcc -O3 -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-fu
 **C:**
 - `-O3 -march=native -mtune=native -flto -ffast-math`
 - `-funroll-loops -finline-functions -fomit-frame-pointer -DNDEBUG`
+
+**Zig:** 🆕
+- `-O ReleaseFast` (equivalent to -O3 with unsafe optimizations)
+- Native LLVM backend optimizations
+- Automatic vectorization and loop unrolling
 
 ### Performance Results
 
@@ -262,12 +282,16 @@ gcc -O3 -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-fu
 - Traditional: 1.685 seconds (6.6x faster!)
 - Sieve of Eratosthenes: 1.430 seconds (7.5x faster!)
 
+**Zig:** 🆕
+- Sieve of Eratosthenes: **0.887 seconds** (17.4x faster!) 🏆
+
 ### Key Insights
 
-1. **Massive Performance Gains**: Both languages achieved 6-11x speedup with optimizations
-2. **Competitive Performance**: Rust and C now perform almost identically
+1. **Massive Performance Gains**: All languages achieved 6-17x speedup with optimizations
+2. **Zig Takes the Lead**: Zig achieved the best performance, beating both Rust and C
 3. **Sieve Advantage**: The Sieve of Eratosthenes is consistently faster for large ranges
 4. **Optimization Effectiveness**: Proper algorithm choice and compiler flags are crucial
+5. **Language Performance**: Zig (0.887s) > Rust (1.411s) > C (1.430s)
 
 ### Expected Output
 
